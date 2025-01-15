@@ -3,7 +3,20 @@ new Vue({
     el: '#app',
     data() {
         return {
+            name:'name',
+            email:'email',
+            tel:'00'
         };
+    },
+    computed:{
+        isInValidName(){
+            return this.name.length < 4;
+        },
+        isInValidEmail(){
+            const regex = new RegExp(/^[-a-z0-9!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@
+                ([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+]))
+            )
+        }
     }
 });
 // 電話番号の入力規則です　コピペして利用してください
