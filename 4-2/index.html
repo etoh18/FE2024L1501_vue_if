@@ -1,19 +1,49 @@
-<!-- トップページHTML -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/style.css" />
     <title>sample</title>
 </head>
 <body>
     <div id="app">
         <div class="form-area_name">
             <p>名前</p>
-        <input v-model="name" type="text" name="name"/>
-        <p v-if="isInValidName" class="error">名前は4文字以上で入力してください</p>
+        <input  
+        type="text"
+        name="name"
+        v-model="name" />
+        <p
+        v-if="isInvalidName"
+        class="error"
+        >名前は４文字以上で入力してください</p>
+    </div>
+ 
+    <div  class="for-area_tel">
+        <p>電話番号</p>
+        <input
+        type="tel"
+        name="tel"
+        v-model="tel"
+        />
+        <p
+        v-if="isInvalidTel"
+        class="error"
+        >電話番号は数字８文字以上で入力してください</p>
+    </div>
+ 
+    <div  class="for-area_email">
+        <p>Eメールアドレス</p>
+        <input
+        type="text"
+        name="email"
+        v-model="email"
+        />
+        <p
+        v-if="isInvalidEmail"
+        class="error"
+        >Eメールアドレスの形式で入力してください</p>
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
